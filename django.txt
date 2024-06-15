@@ -1,0 +1,86 @@
+4 type request
+1-get request
+2-post request
+3-Update request
+4-Delete request
+all request name CRUD
+C-Create
+R-Read
+U-Update
+D-Delete
+
+
+git init
+git add .
+git commit -m "Module 1 codes"
+git push
+
+to see the server->
+python manage.py 
+creating project->
+django-admin startproject project_name
+
+app create->
+django-admin startapp app_name
+
+
+
+1-Project create
+2-App create
+3-Inside project setting update app name
+4-create glovally templates
+5-inside templates create home.html
+6-Inside project create views
+from django.shortcuts import render
+
+def home(request):
+    return render(request,"home.html")
+
+7-Create urls in app
+8-Inside setting update templates
+9-inside app create another templates inside it create html file
+10-app urls->from django.urls import path
+from . import views
+urlpatterns = [
+    path('',views.home),
+]
+
+
+
+
+
+html snippet
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+      <h1></h1>
+    </body>
+</html>
+
+
+Context ki?
+Jokhon amra backend theke fronend a data patha dictionary format a pathai take context bole
+
+
+
+https://github.com/Umair505/Django-practice
+
+
+static->
+STATICFILES_DIRS = [
+	BASE_DIR/'static',
+]
+
+{% static %}
+<img src="{% static 'image_name' %}"/>
+
+
+
+
+admin panel->python manage.py createsuperuser

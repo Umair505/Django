@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+      <h1>This is Home page</h1>
+      <h2>Name : {{name}}</h2>
+      <h2>Age : {{age}}</h2>
+      <h2>Friends : {{frnd }}</h2>
+     
+    <h2>{{frnd | join:" - "}}</h2>
+    <h1>{{'Happy coding. Python is fun.' | truncatewords:3}}</h1>
+    <h1>{{ 100 | add:"50" }}</h1>
+    <h1>{{frnd | length}}</h1>
+    <h1>{{ "East Delta University" | cut:" " }}</h1>
+    <h1>Today : {{ today | date:"D d M Y" }}</h1>
+    <h1>Is 3 divisible by 20:{{ 20 | divisibleby:"3" }}</h1>
+    <h1>File size:{{ 1290329 | filesizeformat }}</h1>
+    <h1>Return First Element of an List :{{frnd | first}}</h1>
+    <h1>{{ frnd | join:"," }}</h1>
+    <h1>{{ numbers | linenumbers }}</h1>
+    <h1>{{ "MOINUL Islam UMAIR" | upper }}</h1>
+    <h1>{{frnd | random}}</h1>
+    <h1>{{numbers | slice:":2"}}</h1>
+    <h1>{{ "Chittagong Bangladesh" | slugify }}</h1>
+    <h1>{{ "I am LEaRning DJango" | title }}</h1>
+    <h1>{{ "I am LEaRning DJango" | wordcount }}</h1>
+    <h1>{{ numbers | add:"[4, 5, 6]"}}</h1>
+    <h1></h1>
+    <h1></h1>
+    </body>
+
+</html>
