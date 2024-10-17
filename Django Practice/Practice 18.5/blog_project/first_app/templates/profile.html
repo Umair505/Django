@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+<div class="d-flex flex-column align-items-center justify-content-center vh-100">
+    <h1>Profile</h1>
+    <p>
+        <a class="btn btn-info me-2 mx-2" href="{% url 'passchange' %}">Change Your Password</a>
+        <a class="btn btn-warning" href="{% url 'passchange2' %}">Change Password Without Old Password</a>
+    </p>
+</div>
+
+    {% load crispy_forms_tags %}
+    <form method ="post" action="" style = "width:50%; margin:auto" novalidate>
+    {% csrf_token %}
+    <!-- {{form | crispy}} -->
+    {% for fm in form %} {{fm.label_tag}} {{fm}}{{fm.errors|striptags}}
+    {% endfor %}
+    <br/>
+{% endblock %}
