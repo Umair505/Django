@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex flex-wrap row vh-100 align-items-center ">
+  <div class="col-lg-8 col-md-12 pt-5 d-flex justify-content-center">
+    <div class="text-center" style="width: 80%">
+      <h1 style="font-size: 60px; font-weight: bold; color: #6610f2">
+        Welcome to our Musical Directory
+      </h1>
+      <p class="text-left" style="color: #0D3858;">
+        Discover the sounds of tomorrow with our Musical Directory, a hub dedicated to showcasing musicians from diverse genres and backgrounds. Whether you're searching for your next favorite artist or looking to collaborate, our platform offers an extensive collection of talent ready to be explored. Dive into the world of music and experience the creativity that thrives here
+      </p>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-12 pt-5 align-content-center justify-content-center">
+    {% load static %}
+    <img class="w-100" src="{% static 'music.png' %}" alt="Example Image" />
+  </div>
+</div>
+{% endblock %}

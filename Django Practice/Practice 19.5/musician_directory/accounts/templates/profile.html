@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+{% block content %}
+<div class="d-flex flex-wrap row vh-100 align-items-center ">
+  <div class="col-lg-8 col-md-12 pt-5 d-flex justify-content-center">
+    <div class="text-center" style="width: 80%">
+      <h1 style="font-size: 80px; font-weight: bold; color: #6610f2">
+        Welcome To Your Profile
+      </h1>
+      
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-12 pt-5 align-content-center justify-content-center">
+    {% load static %}
+    <img class="w-100" src="{% static 'profile.png' %}" alt="Example Image" />
+  </div>
+</div>
+{% endblock %}

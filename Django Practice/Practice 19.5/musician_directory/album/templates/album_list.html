@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class='text-center justify-center aligb m-5' style="text-align: center;">Album List</h1>
+
+<div class="container"> 
+
+    <div class="row justify-content-center"> 
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead class="text-center table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Musician Name</th>
+                        <th>Email</th>
+                        <th>Album Rating</th>
+                        <th>Instrument Type</th>
+                        <th>Album Name</th>
+                        <th>Release Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {% for album in albums %}
+                    <tr>
+                        <td>{{ album.id }}</td>
+                        <td>{{ album.musician }}</td>
+                        <td>{{ album.musician.email }}</td>
+                        <td>{{ album.rating }}</td>
+                        <td>{{ album.musician.instrument_type }}</td>
+                        <td>{{ album.album_name }}</td>
+                        <td>{{ album.release_date }}</td>
+                        <td>
+                            <a class="btn btn-warning" href="{% url 'album_edit' album.id %}">Edit</a>
+                            <a class="btn btn-danger" href="{% url 'album_delete' album.id %}">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
