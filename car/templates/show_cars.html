@@ -1,0 +1,26 @@
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="mt-5 mb-5">
+            <h3>Total Car(s) : {{ cars | length }}</h3>
+        </div>
+        {% for car in cars %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <a href="{% url 'car_detail' pk=car.pk %}">
+                    <img style="width: 70%;" class="card-img-top" src="{{ car.image.url }}" alt="Car image should be here">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ car.brand }}</h5>
+                    <p class="card-text">Price: ${{ car.price }}</p>
+                    <p class="card-text">{{ car.quantity }} car(s) in stock.</p>
+                    <a href="{% url 'car_detail' pk=car.pk %}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

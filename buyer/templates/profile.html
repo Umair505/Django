@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="text-center">
+                <h1 style="text-transform: uppercase;">Welcome {{ user.username }}</h1>
+                <div class="d-flex justify-content-center mt-3 mb-5">
+                    <a href="{% url 'edit_profile' pk=user.pk %}" class="btn btn-primary">Edit Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h1 class="mb-5 text-center">Your Cart</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for car in cars %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <a href="#">
+                    <img class="card-img-top" src="{{ car.image.url }}" alt="Car image should be here">
+                </a>
+                <div class="card-body">
+                    <a href="{% url 'car_detail' pk=car.pk %}" class="card-title h5">{{ car.name }}</a>
+                    <p class="card-text">Price: ${{ car.price }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

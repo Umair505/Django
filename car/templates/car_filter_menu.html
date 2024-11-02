@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col">
+            <a href="{% url 'home' %}" class="btn btn-outline-primary btn-block mb-3">All</a>
+        </div>
+        {% for brand in brands %}
+        <div class="col">
+            <a href="{% url 'home' brand_name=brand.name %}" class="btn btn-outline-primary btn-block mb-3">{{ brand.name }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
