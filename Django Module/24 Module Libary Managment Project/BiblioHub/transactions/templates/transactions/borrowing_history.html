@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+ {% block head_title %}Borrowed Report{% endblock %}
+ {% block content %}
+ <div class="pt-10 pb-96" style="padding-bottom: 900px;">
+ 
+     <table class="min-w-full divide-y divide-gray-200">
+         <thead class="bg-cyan-500" style="background-color: aqua;">
+             <tr>
+                 {% comment %} <th class="px-6 py-3 text-center text-l font-medium text-black uppercase tracking-wider">User Name</th> {% endcomment %}
+                 <th class="px-6 py-3 text-center text-l font-medium text-black uppercase tracking-wider">Book Title</th>
+                 <th class="px-6 py-3 text-center text-l font-medium text-black uppercase tracking-wider">Book Price</th>
+                 <th class="px-6 py-3 text-center text-l font-medium text-black uppercase tracking-wider">Borrowed Quantity</th>
+                 <th class="px-6 py-3 text-center text-l font-medium text-black uppercase tracking-wider">Borrowed Time</th>
+                 <th class="px-6 py-3 text-center text-l font-medium text-black uppercase tracking-wider">Total Price</th>
+                 <th class="px-6 py-3 text-center text-l font-medium text-black uppercase tracking-wider">Borrowed</th>
+                 <th class="px-6 py-3 text-center text-l font-medium text-black uppercase tracking-wider">Confirmation</th>
+             </tr>
+         </thead>
+ 
+         <tbody class="bg-white divide-y divide-gray-200">
+             {% for borrowing in borrowings %}
+             <tr>
+                   <td class="px-6 py-4 whitespace-nowrap text-center">{{ borrowing.book.title }}</td>
+                 <td class="px-6 py-4 whitespace-nowrap text-center">${{ borrowing.book.price }}</td>
+                 <td class="px-6 py-4 whitespace-nowrap text-center">{{ borrowing.quantity }}</td>
+                 <td class="px-6 py-4 whitespace-nowrap text-center">{{ borrowing.borrow_date }}</td>
+                 <td class="px-6 py-4 whitespace-nowrap text-center">${{ borrowing.total_price_cur }}</td>
+                 <td class="px-6 py-4 whitespace-nowrap text-center">
+                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                 </td>
+                 <td class="px-6 py-4 whitespace-nowrap text-center">
+                     <form action="{% url 'return_book' borrowing.id %}" method="post">
+                         {% csrf_token %}
+                         <button type="submit" class="ml-2 px-4 py-2 font-medium text-white bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:shadow-outline-red active:bg-red-600 transition duration-150 ease-in-out">Return</button>
+                     </form>
+                 </td>
+             </tr>
+             {% endfor %}
+         </tbody>
+ 
+         <tfoot class="bg-gray-200">
+             <tr>
+                 <td colspan="4" class="px-6 py-4 text-right text-l font-medium text-black uppercase tracking-wider">Total Price:</td>
+                 <td class="px-6 py-4 text-center text-l font-medium text-black uppercase tracking-wider">${{ total_price }}</td>
+                 <td colspan="2"></td>
+             </tr>
+         </tfoot>
+     </table>
+ 
+ </div>
+ 
+ {% endblock %}
+ 
