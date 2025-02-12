@@ -1,0 +1,120 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block head_title %}Library Management{% endblock %} 
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+<!-- .........brand name.................  -->  
+
+<section >
+    <h5 class="p-4">Browse By Category</h5>
+    <style>
+      width: 100%;
+      .mx-container {
+        max-width:1744px;
+        margin: 0 auto;
+      }
+      
+      @media (max-width: 768px) {
+        .mx-container {
+          max-width: 90%;
+        }
+      }
+      
+      .mb-custom {
+        margin-bottom: 2rem;
+      }
+      
+      .box {
+        text-align: center;
+        border: 1px solid #ccc;
+        transition: box-shadow 0.3s ease;
+        border-radius: 5px;
+        height: 50px;
+        width: 150px;
+        padding: 0.25rem;
+      }
+      
+      .box:hover {
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .bx {
+        padding-top: 8px;
+      }
+    </style>
+  
+    <div class="container mx-container bg-body-secondary pt-2 pb-1">
+      <div class="d-flex flex-wrap justify-content-center">
+        {% for category in categories %}
+          <div class="m-2">
+            <div class="box text-center">
+              <a href="{%url 'category_wise_view' category.slug%}">
+  
+                  <h5 class="bx">{{ category.name }}</h5>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  
+  <!-- .........Book list.................  -->  
+  
+  
+  
+  <section>
+      <h3 class="p-4">Found Book : {{data | length}}</h3>
+  
+      <div class="d-flex flex-wrap justify-content-center">
+        {% for book in books %}
+          <div class="card m-3 shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
+            {% if book.image %}
+              <img src="{{ book.image.url }}" alt="{{ book.title }}" />
+            {% else %}
+              <img src="{% static 'image2.png' %}" alt="Placeholder Image" />
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">{{ book.title }}</h5>
+              <p class="card-text">{{ book.description|truncatechars:50 }}</p>
+              <p class="card-text">Available: {{ book.quantity }}</p>
+              <p class="card-text">Price: ${{ book.price }}</p>
+              <p class="card-text bg-secondary rounded-4 w-50 text-center">{{ book.category.name }}</p>
+              {% if request.user.is_authenticated %}
+              <form method="post" action="{% url 'purchase_car' book.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Buy Now</button>
+              </form>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  
+  
+  
+  
+  
+  
+      
+    
+
+
+
+
+
+
+
+{% endblock %}
