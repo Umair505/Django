@@ -1,0 +1,19 @@
+https://docs.google.com/document/d/1i2AFOekqtf4FfmVamCfAi_mBC1u8U0TyrhC8QuikI9k/edit?fbclid=IwZXh0bgNhZW0CMTAAAR3V-amticzSPOMfigxBhSuvqc5P9wHJDTfil66d7-onnJ3DLyVduidJsxA_aem_Ab0KtQBiPmDyK4YIpBqJi83aF8vtkK7i2qapKohPxPx-AQajjKFIyB_UV9nz9YkyZiV4_l4WEUGQiCHE0Nfwx_tI
+
+
+
+Api: https://testing-8az5.onrender.com/
+{
+"list": "https://testing-8az5.onrender.com/doctor/list",
+"doctors_time": "https://testing-8az5.onrender.com/doctor/availabletime",
+"designation": "https://testing-8az5.onrender.com/doctor/designation/",
+"specialization": "https://testing-8az5.onrender.com/doctor/specialization"
+"availabletime": "https://testing-8az5.onrender.com/doctor/availabletime/m
+}
+All services: https://testing-8az5.onrender.com/services/
+Patient register: https://testing-8az5.onrender.com/patient/register/
+Patient login: https://testing-8az5.onrender.com/patient/login/
+Patient logout: https://testing-8az5.onrender.com/patient/logout
+
+
+
