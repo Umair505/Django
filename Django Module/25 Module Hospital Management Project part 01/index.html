@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"rel="stylesheet"integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+        <header>
+            <nav class="nav-main d-flex justify-content-around">
+                <div class="logo-container d-flex align-items-center gap-2">
+                    <img src="./Images/stethoscope 1.png" alt="">
+                    <h2 class="">SmartCare</h2>
+                </div>
+                <div class="menu-container  d-flex gap-3 p-4">
+                    <li class="nav-item">Home</li>
+                    <li class="nav-item">Services</li>
+                    <li class="nav-item">Contact us</li>
+                    <li class="nav-item">Login</li>
+                </div>
+            </nav>
+        </header>
+        <banner>
+            <h3 class="text-start" style="max-width: 1280px; margin: auto;">Dr. Hosaraf Karim</h3>
+            <div class="banner-container">
+                <div class="banner d-flex align-items-center">
+                    <div class="banner-left">
+                        <h1 class="text-center">Providing Quality
+                            <br>
+                            Healthcare
+                        </h1>
+                        <p class="w-75 m-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut optio inventore sunt architecto aperiam, voluptatem doloribus possimus, fuga quis ea illum voluptate repudiandae repellat dolores facere qui.</p>
+                    </div>
+                    <div class="banner-img">
+                        <img class="bn-img" src="./Images/doc.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </banner>
+        
+        <!-- service container  -->
+
+   <div class="service-container pt-3">
+    <h1 class="tx text-center ">Our Service's</h1>
+    <p class="  text-center w-75 m-auto pb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos, quibusdam voluptatem error ratione et labore consectetur excepturi culpa aperiam.</p>
+
+    <div class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein slider-item-first-visible">
+        <ul id="services-container" class=" slider-container py-4">
+           
+            
+        </ul>
+    
+        <button type="button" class="slider-nav" aria-label="Go left"></button>
+        <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+    
+        <div class="slider-indicators">
+            <button class="active" aria-label="Go to slide"></button>
+            <button aria-label="Go to slide"></button>
+            <button aria-label="Go to slide"></button>
+            <button aria-label="Go to slide"></button>
+            <button aria-label="Go to slide"></button>
+        </div>
+    </div>
+
+
+   </div>
+
+
+<!-- Doctor List  -->
+<div class="doctor-container m-auto pt-5  p-3 pt-4 d-flex row justify-content-center align-content-center">
+    <!-- <h1>Filter</h1> -->
+    <div class="col-md-4 text-center d-flex gap-3 justify-content-center">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Designations
+            </button>
+            <ul id="drop-deg" class="dropdown-menu">
+                </ul>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Specialization
+            </button>
+            <ul id="drop-spe" class="dropdown-menu">
+             
+            </ul>
+          </div>
+    </div>
+
+
+
+    <div class="col-md-8">
+        <input type="text" name="" id="search" placeholder="search....">
+        <button class="btn btn-primary" id="" onclick="handleSearch()">Search</button>
+         <div id="doctors" class="doctors mt-5"></div>
+        <div id="doctors"></div>
+    </div>
+</div>
+
+
+
+
+
+        <footer></footer>
+
+
+
+
+    <!-- script file add   -->
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+</body>
+
+</html>
+
