@@ -4,8 +4,10 @@ from .models import Post
 from . serializers import PostSerializer
 from rest_framework.response import Response
 from rest_framework import status
+from . permissions import IsAuthorOrReadOnly
 # Create your views here.
 class PostList(APIView):
+    permission_classes = [IsAuthorOrReadOnly]
     def get(self,request, format=None):
         print("inside get in post list")
         posts = Post.objects.all()
@@ -20,6 +22,7 @@ class PostList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class PostDetail(APIView):
+    permission_classes = [IsAuthorOrReadOnly]
     def get_object(self,pk):
         try:
             return Post.objects.get(pk=pk)
