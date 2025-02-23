@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background-color: #f9f9f9;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            text-align: center;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .link-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .link-button:hover {
+            background-color: wheat;
+            border: 2px solid gray;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Appointment Confirmation</h2>
+        </div>
+        <div class="content">
+            <p>Dear <strong>{{user.first_name}} {{user.last_name}}</strong>,</p>
+            <p>We are pleased to confirm your appointment with <strong> {{doctor.user.first_name }} {{doctor.user.last_name}}</strong>.</p>
+            <p>Please find the details of your appointment below:</p>
+            <p>You can join the meeting using the following link:</p>
+            <a href="{{doctor.meet_link}}" class="link-button">{{doctor.meet_link}}</a>
+            <p>Or copy and paste this URL into your browser: <a href="{{ meet_link }}">{{ meet_link }}</a></p>
+            <p>If you need to reschedule or cancel your appointment, please contact us at <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.</p>
+            <p>Thank you for choosing our services. We look forward to seeing you!</p>
+        </div>
+        <div class="footer">
+            <p>Best regards,</p>
+            <p><strong>Smart Care Team</strong></p>
+            <p><a href="https://www.smartcare.com">www.smartcare.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
