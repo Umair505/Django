@@ -1,0 +1,275 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% load static %}
+
+  {% comment %} <div class="d-flex flex-wrap row vh-100 align-items-center">
+    <div class="col-lg-6 col-md-12 pt-5 d-flex justify-content-center">
+      <div class="text-center" style="width: 80%">
+        <h1 style="font-size: 80px; font-weight: bold; color: #F64F11">Welcome To Our Car World</h1>
+        <p class="text-left" style="color: #0D3858;">Welcome to Car World, where we believe that everyone deserves a chance to get behind the wheel of a car they love. Since 2004, we've been serving Arkansas with some of the best car financing options around, but we're not just about numbers and credit scores - we see good people!</p>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 pt-5 align-content-center justify-content-center mx-auto">
+      <img class="me-1" style="width: 900px;" src="{% static 'image1.png' %}" alt="Example Image" />
+    </div>
+  </div> {% endcomment %}
+
+
+
+
+   <!--............... carasol .............-->
+
+
+
+
+
+
+  
+   <section class="carosol sec1 vh-100 align-content-center justify-content-center" >
+
+    <style>
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        color: black; /* Change button color to black */
+          }
+
+
+/* Styles for small devices (landscape phones) */
+@media only screen and (max-width: 576px) {
+  /* Adjustments for small devices */
+}
+
+/* Styles for medium devices (tablets) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  /* Adjustments for tablets */
+}
+
+/* Styles for large devices (desktops) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  /* Adjustments for desktops */
+}
+
+/* Styles for larger devices (large desktops) */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  /* Adjustments for larger desktops */
+}
+
+/* Styles for extra-large devices (extra large desktops) */
+@media only screen and (min-width: 1201px) {
+  /* Adjustments for extra-large desktops */
+}
+
+
+    </style>
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+
+
+        
+        <div class="carousel-item active">
+          <div class="row d-flex flex-wrap align-items-center">
+           
+            <div class="col-12 col-md-5 align-items-center d-flex justify-content-end">
+              <div style="width: 80%;">
+                <h1 class="h-100" style="font-weight: bold;">Nebula S1Ford Focus ST Yellow</h1>
+                <p class="w-100 text-start">The Ford Focus ST Yellow combines the practicality of a compact car with the exhilarating performance of a sports car. Its eye-catching yellow exterior paint grabs attention on the road, making a bold statement wherever it goes.</p>
+                <h4 class="h-75">$120290</h4>
+                {% if request.user.is_authenticated %}
+                <form method="post">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-primary">Buy Now</button>
+                </form>
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-12 col-md-7">
+              <!-- Image -->
+              <img class="imgg mx-auto d-block w-75 py-3" src="{% static 'image1.png' %}" alt="Example Image" />
+            </div>
+          </div>
+        </div>
+
+       
+
+
+        
+          <div class="carousel-item ">
+            <div class="row d-flex flex-wrap align-items-center">
+              <div class="col-12 col-md-5 align-items-center d-flex   justify-content-end">
+                <div  style="width: 80%;">
+                  <h1 class="h-100" style="font-weight: bold;"> Ford Focus ST Green </h1>
+                  <p class="w-100 text-start">Distinguished by its vibrant green exterior, the Ford Focus ST Green captures attention with its bold and distinctive appearance. This variant embodies a sense of environmental consciousness while maintaining the dynamic and sporty characteristics expected from the Focus ST lineup. </p>
+                  <h2 class="h-75">$190000</h2>
+                  {% if request.user.is_authenticated %}
+                
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Buy Now</button>
+                    {% endif %}
+                </div>
+              </div>
+            
+              <div class="col-12 col-md-7 ">
+                <!-- Image -->
+                <img class="imgg mx-auto d-block   w-75 py-3"   src="{% static 'image3.png' %}" alt="Example Image" />
+                
+              </div>
+          </div>
+          </div>
+   
+
+
+
+        
+          <div class="carousel-item ">
+            <div class="row d-flex align-items-center">
+              <div class="col-12 col-md-5 col align-items-center d-flex   justify-content-end">
+                <div class="  " style="width: 80%;">
+                  <h1 class="h-100" style="font-weight: bold;">Ford Focus ST Yellow  </h1>
+                  <p class="w-100 text-start">Distinguished by its bold and striking red exterior, the Ford Focus ST Red stands out on the road with its vibrant appearance and sporty design. This variant embodies the essence of performance, showcasing a dynamic and energetic personality.</p>
+                  <h2 class="h-75">$11199</h2>
+                  {% if request.user.is_authenticated %}
+                
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Buy Now</button>
+                    {% endif %}
+                </div>
+              </div>
+              <div class="col-12 col-md-7 ">
+                <!-- Image -->
+                <img class="imgg mx-auto d-block   w-75 py-3"   src="{% static 'image2.png' %}" alt="Example Image" />
+                
+              </div>
+          </div>
+        </div>
+       
+
+
+        <button class="carousel-control-prev text-black" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon text-black" aria-hidden="true"></span>
+          <span class="visually-hidden text-black">Previous</span>
+      </button>
+      <button class="carousel-control-next text-dark" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
+          <span class="visually-hidden text-dark ">Next</span>
+      </button>
+      
+      </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <!-- .........brand name................. -->
+
+<div class="vh-100">
+  <section class="">
+    <h5 class="p-4 ">Browse By Category</h5>
+    <style>
+      .mx-container {
+        width: 100%;
+        max-width: 1680px;
+        margin: 0 auto;
+      }
+      
+      @media (max-width: 768px) {
+        .mx-container {
+          max-width: 90%;
+        }
+      }
+      
+      .mb-custom {
+        margin-bottom: 2rem;
+      }
+      
+      .box {
+        text-align: center;
+        border: 1px solid #ccc;
+        transition: box-shadow 0.3s ease;
+        border-radius: 5px;
+        height: 50px;
+        width: 150px;
+        padding: 0.25rem;
+      }
+      
+      .box:hover {
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .bx {
+        padding-top: 8px;
+      }
+    </style>
+
+    <div class="container mx-container bg-body-secondary pt-2 pb-1">
+      <div class="d-flex flex-wrap justify-content-center">
+        {% for brand in categories %}
+          <div class="m-2">
+            <div class="box text-center">
+              <a href="{% url 'category_wise_view' brand.slug %}" class="text-decoration-none text-dark"><h5 class="bx">{{ brand.name }}</h5></a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <hr />
+  <!-- .........Car list................. -->
+
+  <section>
+
+  <style>
+    .card{
+      transition: all 0.3s ease-in-out;
+    }
+     .card:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    }
+  </style>
+
+    <h3 class="p-4">Car list found : {{ data|length }}</h3>
+
+    <div class="d-flex flex-wrap justify-content-center">
+      {% for car in data %}
+        <div class=" card m-3 shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
+          {% if car.image %}
+            <img src="{{ car.image.url }}" alt="{{ car.name }}" />
+          {% else %}
+            <img src="{% static 'placeholder_image.jpg' %}" alt="Placeholder Image" />
+          {% endif %}
+          <div class="card-body">
+            <a href="{% url 'car_detail' car.id %}" class="text-decoration-none text-dark"><h5 class="card-title">{{ car.name }}</h5></a>
+            <p class="card-text">{{ car.description|truncatechars:50 }}</p>
+            <p class="card-text">Available: {{ car.quantity }}</p>
+            <p class="card-text">Price: ${{ car.price }}</p>
+            <div>
+              <ul class="text-start">
+                {% for category in car.category.all %}
+                  <span class="card-text bg-secondary-subtle rounded-2 m-1 w-50 ">{{ category.name }}</span>
+                {% endfor %}
+              </ul>
+            </div>
+            {% if request.user.is_authenticated %}
+            <form method="post" action="{% url 'purchase_car' car.id %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-primary">Buy Now</button>
+            </form>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+{% endblock %}

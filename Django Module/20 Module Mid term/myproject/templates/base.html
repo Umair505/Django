@@ -1,0 +1,201 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-HJr/iD24F+L/etpo5zYCmAV1f6HYQGK5f1R+5FrwRG5n1m/gIXT1vCnh3I8pPU7v" crossorigin="anonymous">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{% static 'boostrap/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'boostrap/css/bootstrap.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Satisfy&display=swap" rel="stylesheet">
+  {% block corecss %}
+      <link rel="stylesheet" href="{% static 'boostrap/css/style.css' %}">
+  {% endblock corecss %}
+
+
+  <style>
+/* Default styles */
+
+/* Styles for small devices (landscape phones) */
+@media only screen and (max-width: 576px) {
+  /* Adjustments for small devices */
+  .nav-item{
+    padding-top: 10px;
+  }
+}
+
+/* Styles for medium devices (tablets) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  /* Adjustments for tablets */
+  .nav-item{
+    padding-top: 10px;
+  }
+}
+
+/* Styles for large devices (desktops) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  /* Adjustments for desktops */
+}
+
+/* Styles for larger devices (large desktops) */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  /* Adjustments for larger desktops */
+}
+
+/* Styles for extra-large devices (extra large desktops) */
+@media only screen and (min-width: 1201px) {
+  /* Adjustments for extra-large desktops */
+}
+
+.mx-container {
+  width: 100%; 
+  max-width: 1680px; 
+  margin: 0 auto; 
+}
+
+
+@media (max-width: 768px) {
+  .mx-container {
+      max-width: 90%; 
+      
+  }
+}
+
+  </style>
+
+
+
+
+</head>
+<body>
+
+  <nav class=" navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="mx-container container-fluid">
+      {% comment %} <a class="navbar-brand" href="#">CC</a> {% endcomment %}
+      <img src="{% static 'logo.jpg' %}" alt="CR" class="img-fluid rounded-circle" style="width: 40px; ">
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class=" collapse navbar-collapse justify-center" id="navbarSupportedContent">
+  
+        <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
+          
+          {% comment %} --------------authentication check {% endcomment %}
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link active" style="font-weight: bolder;" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  style="font-weight: bolder;"  aria-current="page" href="{% url 'car_list' %}">Show Car  </a>
+        
+          </li>
+          {% comment %}           
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'album_list' %}">Album </a>
+          </li>
+
+        </li> {% endcomment %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#"  style="font-weight: bolder;"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Create
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item"  style="font-weight: bolder;"  href="{% url 'add_car' %}">Add Car  </a></li>
+              <li><a class="dropdown-item"  style="font-weight: bolder;"  href="{% url 'add_brand' %}">Add Brand </a></li>
+            
+            </ul>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+
+          {% endif %}
+        </ul>
+  
+        <form class="d-flex " role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn  btn-outline-light " type="submit">Search</button>
+        </form>
+  
+        <div class='d-flex'>
+          <ul class="navbar-nav">
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              {% comment %} <a class="btn btn-warning mx-4" aria-current="page" href="{% url 'profile' %}">Profile</a> {% endcomment %}
+            </li>
+            <li class="nav-item">
+              <a class=" pad   btn btn-warning mx-2  " aria-current="page" href="{% url 'profile_views' %}">Profile</a>
+              <a class=" pad   btn btn-warning ms-2 " aria-current="page" href="{% url 'user_logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li class="   nav-item">
+              <a class="pad   btn btn-info mx-2 " aria-current="page" href="{% url 'register' %}">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="pad btn btn-warning ms-2 " aria-current="page" href="{% url 'user_login' %}">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+  
+      </div>
+    </div>
+  </nav>
+  
+  <div class='justify-content-center d-flex align-items-center'>
+    {% for message in messages %}
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      {% comment %} <img src="..." class="rounded me-2" alt="..."> {% endcomment %}
+      <strong class="me-auto">Congratulations</strong>
+      <small>Now</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      <small>{{ message }}</small>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+  
+  
+<div class="mx-container vh-100">
+
+  {% block content %}
+  
+  {% endblock content %}
+</div>
+
+
+
+
+
+
+
+
+<script src="{% static 'boostrap/js/jquery.js' %}"></script>
+<script src="{% static 'boostrap/js/popper.js' %}"></script>
+<script src="{% static 'boostrap/js/all.min.js' %}"></script>
+<script src="{% static 'boostrap/js/bootstrap.js' %}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+  // Initialize Bootstrap toast
+  var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+  var toastList = toastElList.map(function(toastEl) {
+    return new bootstrap.Toast(toastEl);
+  });
+
+  // Show all toasts
+  toastList.forEach(function(toast) {
+    toast.show();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% comment %}
+
+{% block content %}
+  <div class="pt-5">
+    <table class="table">
+      <thead>
+        <tr class="bg-body-secondary">
+          <th scope="col" class="text-center">Serial</th>
+          <th scope="col" class="text-center">User</th>
+          <th scope="col" class="text-center">Car</th>
+          <th scope="col" class="text-center">Purchase Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for purchase in purchases %}
+          <tr>
+            <th scope="row" class="text-center">{{ forloop.counter }}</th>
+            <td class="text-center">{{ purchase.user.username }}</td>
+            <td class="text-center">{{ purchase.car.name }}</td>
+            <td class="text-center">{{ purchase.purchase_date }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %} {% endcomment %}
+
+{% block content %}
+  <div class="pt-5">
+    <table class="table">
+      <thead>
+        <tr class="bg-body-secondary">
+          <th scope="col" class="text-center">Serial</th>
+          <th scope="col" class="text-center">User</th>
+          <th scope="col" class="text-center">Car</th>
+          <th scope="col" class="text-center">Purchase Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for purchase in purchases %}
+          <tr>
+            <th scope="row" class="text-center">{{ forloop.counter }}</th>
+            <td class="text-center">{{ purchase.user.username }}</td>
+            <td class="text-center">{{ purchase.car.name }}</td>
+            <td class="text-center">{{ purchase.purchase_date }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card m-3 shadow p-3 mb-5 bg-body rounded pt-5" style="">
+    {% for purchase in purchases %}
+      <div class="row">
+        <div class="col-7">
+          {% if forloop.first %}
+            {{ purchase.car.name }}<br />
+            <img src="{{ purchase.car.image.url }}" alt="{{ purchase.car.name }}" class="w-50 mx-auto d-block" />
+          {% endif %}
+        </div>
+
+        <div class="col-5 card-body align-content-center justify-content-center">
+          <h5 class="card-title">{{ purchase.car.name }}</h5>
+          <p class="card-text">{{ purchase.car.description }}</p>
+          <p class="card-text">Price: ${{ purchase.car.price }}</p>
+          <p class="card-text">Purchase date : {{ purchase.purchase_date }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

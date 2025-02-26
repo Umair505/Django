@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% load static %} {% load crispy_forms_tags %}
+{% block content %}
+<div class="card m-3  shadow p-3 mb-5 bg-body rounded pt-5" style="">
+  <div class="row">
+      <div class="col-12 col-md-7 col-lg-6">
+          <img src="{{ car.image.url }}" alt="{{ car.name }}" class="w-100  mx-auto d-block" />
+      </div>
+
+      <div class="col-12 col-md-5 col-lg-6 card-body align-content-center justify-content-center">
+          <h5 class="card-title">{{ car.name }}</h5>
+          <p class="card-text">{{ car.description }}</p>
+          <p class="card-text">Available: {{ car.quantity }}</p>
+          <p class="card-text">Price: ${{ car.price }}</p>
+          
+          {% comment %} <p class="card-text bg-secondary rounded-4 w-50 text-center">{{ car.category.name }}</p> {% endcomment %}
+          {% if request.user.is_authenticated %}
+          <form method="post" action="{% url 'purchase_car' car.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Buy Now</button>
+          </form>
+          {% endif %}
+      </div>
+  </div>
+</div>
+
+
+  <section>
+    <div class="row d-flex justify-content-center pt-3">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-0 border" style="background-color: #f0f2f5">
+          <div class="card-body p-4">
+            <div data-mdb-input-init class="form-outline mb-4">
+              <label class="form-label" for="addANote">Total comments: {{ comments|length }}</label>
+            </div>
+
+            {% for comment in comments %}
+              <div class="card mb-4">
+                <div class="card-body">
+                  <p>
+                    <small>{{ comment.created_on }}</small>
+                  </p>
+
+                  <div class="d-flex justify-content-between">
+                    <div class="align-items-center">
+                      <div class="d-flex">
+                        <div>
+                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar" width="25" height="25" />
+                        </div>
+                        <div>
+                          <h5 class="m-1"><b>{{ comment.name }}</b></h5>
+                        </div>
+                      </div>
+                      <div>
+                        <p class="small mb-0 ms-2 ps-5">{{ comment.body }}</p>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center">
+                      <p class="small text-muted mb-0">Upvote?</p>
+                      <i class="far fa-thumbs-up mx-2 fa-xs text-dark" style="margin-top: -0.16rem"></i>
+                      <p class="small text-muted mb-0">4</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="width: 50%; margin: auto" class="pb-5">
+      <h1 class="text-center pt-5">Add Comment</h1>
+      <form action="" method="POST">
+        {% csrf_token %} {{ comment_form|crispy }}
+        <button class="btn btn-warning d-block mx-auto">Submit</button>
+      </form>
+    </div>
+  </section>
+{% endblock %}
