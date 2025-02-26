@@ -1,0 +1,113 @@
+{% extends "base.html" %} 
+{% block content %}
+{% load static %}
+
+
+ <div class="d-flex flex-wrap row vh-100 align-items-center ">
+  <div class="col-lg-6 col-md-12 pt-5 d-flex justify-content-center">
+    <div class="text-center" style="width: 80%">
+      <h1 style="font-size: 80px; font-weight: bold; color: #F64F11">
+        Welcome To Our Car World
+      </h1>
+      <p class="text-left" style="color: #0D3858;">
+        Welcome to Car World, where we believe that everyone deserves a chance to get behind the wheel of a car they love. Since 2004, we've been serving Arkansas with some of the best car financing options around, but we're not just about numbers and credit scores - we see good people!</p>
+    </div>
+  </div>
+
+  <div class="col-lg-6 col-md-12 pt-5 align-content-center justify-content-center mx-auto">
+    <img class="me-1" style="width: 900px;" src="{% static 'image1.png' %}" alt="Example Image" />
+  </div>
+</div> 
+
+
+<!-- .........brand name.................  -->  
+
+<section >
+  <h5 class="p-4">Browse By Category</h5>
+  <style>
+    .mx-container {
+      width: 100%;
+      max-width: 1680px;
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 768px) {
+      .mx-container {
+        max-width: 90%;
+      }
+    }
+    
+    .mb-custom {
+      margin-bottom: 2rem;
+    }
+    
+    .box {
+      text-align: center;
+      border: 1px solid #ccc;
+      transition: box-shadow 0.3s ease;
+      border-radius: 5px;
+      height: 50px;
+      width: 150px;
+      padding: 0.25rem;
+    }
+    
+    .box:hover {
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    .bx {
+      padding-top: 8px;
+    }
+  </style>
+
+  <div class="container mx-container bg-body-secondary pt-2 pb-1">
+    <div class="d-flex flex-wrap justify-content-center">
+      {% for brand in categories %}
+        <div class="m-2">
+          <div class="box text-center">
+            <a href="{%url 'category_wise_view' brand.slug%}">
+
+                <h5 class="bx">{{ brand.name }}</h5>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- .........Car list.................  -->  
+
+
+
+<section>
+    <h3 class="p-4">Found Car : {{data | length}}</h3>
+
+    <div class="d-flex flex-wrap justify-content-center">
+      {% for car in data %}
+        <div class="card m-3 shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
+          {% if car.image %}
+            <img src="{{ car.image.url }}" alt="{{ car.name }}" />
+          {% else %}
+            <img src="{% static 'placeholder_image.jpg' %}" alt="Placeholder Image" />
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{ car.name }}</h5>
+            <p class="card-text">{{ car.description|truncatechars:50 }}</p>
+            <p class="card-text">Available: {{ car.quantity }}</p>
+            <p class="card-text">Price: ${{ car.price }}</p>
+            <p class="card-text bg-secondary rounded-4 w-50 text-center">{{ car.brand.name }}</p>
+            {% if request.user.is_authenticated %}
+            <form method="post" action="{% url 'purchase_car' car.id %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-primary">Buy Now</button>
+            </form>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+
+{% endblock %}

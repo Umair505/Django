@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% load crispy_forms_tags %}
+
+  <div style="width: 50%; margin: auto; padding-top: 2rem;">
+    <form action="" method="POST" class="needs-validation" novalidate autocomplete="off">
+      {% csrf_token %}
+      <!-- {{form | crispy}}-->   
+      <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-12 col-xl-12">
+              <div class="card bg-primary text-white" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+                  <div class="mb-md-5 mt-md-4 pb-1">
+                    <h2 class="fw-bold mb-2 text-uppercase">Add Car</h2>  
+                    {% for field in form %}
+                    <div class="form-group row justify-content-center">
+                        <div class="col-sm-7">
+                            <div data-mdb-input-init class="form-outline form-white mb-4">
+                                {{ field }}
+                                {% for error in field.errors %}
+                                    <p class="text-danger">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>                    
+                    {% endfor %}
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Add Car </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </form>
+  </div>
+{% endblock %}
