@@ -1,0 +1,72 @@
+#doughnutChart {
+    max-height: 417px;
+
+}
+
+#upDownLineChart {
+    height: 448px;
+
+}
+
+.card {
+    border: none;
+}
+
+.card-title,
+.card-header {
+    font-size: x-large;
+    font-family: 'Roboto', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.bg-gradient-primary {
+    /* background: #007BFF; */
+
+    background: hsla(232, 91%, 65%, 1);
+
+    background: linear-gradient(90deg, hsla(232, 91%, 65%, 1) 0%, hsla(275, 44%, 53%, 1) 48%, hsla(346, 90%, 62%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(232, 91%, 65%, 1) 0%, hsla(275, 44%, 53%, 1) 48%, hsla(346, 90%, 62%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(232, 91%, 65%, 1) 0%, hsla(275, 44%, 53%, 1) 48%, hsla(346, 90%, 62%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#576DF7", endColorstr="#9153BC", GradientType=1);
+
+}
+
+.bg-gradient-success {
+    background: hsla(172, 78%, 35%, 1);
+
+    background: linear-gradient(90deg, hsla(172, 78%, 35%, 1) 0%, hsla(160, 70%, 43%, 1) 48%, hsla(145, 78%, 55%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(172, 78%, 35%, 1) 0%, hsla(160, 70%, 43%, 1) 48%, hsla(145, 78%, 55%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(172, 78%, 35%, 1) 0%, hsla(160, 70%, 43%, 1) 48%, hsla(145, 78%, 55%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#149F8C", endColorstr="#21BB87", GradientType=1);
+}
+
+.bg-gradient-warning {
+
+    background: hsla(336, 90%, 51%, 1);
+
+    background: linear-gradient(90deg, hsla(336, 90%, 51%, 1) 0%, hsla(354, 88%, 57%, 1) 48%, hsla(22, 99%, 51%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(336, 90%, 51%, 1) 0%, hsla(354, 88%, 57%, 1) 48%, hsla(22, 99%, 51%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(336, 90%, 51%, 1) 0%, hsla(354, 88%, 57%, 1) 48%, hsla(22, 99%, 51%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F2146B", endColorstr="#F23345", GradientType=1);
+}
+
+.bg-gradient-danger {
+
+    background: hsla(119, 43%, 50%, 1);
+
+    background: linear-gradient(90deg, hsla(119, 43%, 50%, 1) 0%, hsla(95, 52%, 55%, 1) 46%, hsla(66, 69%, 61%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(119, 43%, 50%, 1) 0%, hsla(95, 52%, 55%, 1) 46%, hsla(66, 69%, 61%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(119, 43%, 50%, 1) 0%, hsla(95, 52%, 55%, 1) 46%, hsla(66, 69%, 61%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#4BB749", endColorstr="#81C84F", GradientType=1);
+}
