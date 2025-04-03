@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin dashboard </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="path/to/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/syle_admin.css" rel="stylesheet">
+    <style>
+        body {
+
+            /* background: linear-gradient(to right, #4facfe, #00f2fe); */
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container-xxl bg-white p-0"> -->
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-dark px-5">
+        <div class="row gx-0">
+            <div class="col-lg-2 bg-dark d-none d-lg-block">
+                <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center ps-2">
+                    <img src="./img/blu.png" alt="BSB" class="" style="width: 42%;">
+                </a>
+            </div>
+            <div class="col-lg-10">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
+                    <a href="index.html" class="navbar-brand d-block d-lg-none">
+                        <img src="./img/blu.png" alt="BSB" class="" style="width: 70px;">
+                    </a>
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="admin_dashboard.html" class="nav-item nav-link "> DashBoard</a>
+                        </div>
+                        <div class="d-flex flex-row align-items-center justify-content-end gap-3 pe-4"
+                            id="auth-buttons">
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+
+    <div class="min-vh-100 " style="padding-bottom: 200px;">
+        <!-- Page Content -->
+        <div class="container-lg-full mx-4 mt-4">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-md-2">
+                    <div class="list-group">
+                        <a href="admin_dashboard.html" class="list-group-item list-group-item-action active">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </a>
+                        <a href="admin_user_management.html" class="list-group-item list-group-item-action">
+                            <i class="fas fa-users"></i> Users
+                        </a>
+                        <a href="admin_district.html" class="list-group-item list-group-item-action">
+                            <i class="fas fa-map-marker-alt"></i> District
+                        </a>
+                        <a href="admin_hotel_add.html" class="list-group-item list-group-item-action">
+                            <i class="fas fa-hotel"></i> Hotels
+                        </a>
+                        <a href="admin_Review_Details.html" class="list-group-item list-group-item-action">
+                            <i class="fas fa-comments"></i> Reviews
+                        </a>
+                        <a href="admin_booked_list.html" class="list-group-item list-group-item-action">
+                            <i class="fas fa-calendar-check"></i> Bookings
+                        </a>
+                        <a href="admin_show_contact_us.html" class="list-group-item list-group-item-action">
+                            <i class="fas fa-envelope "></i>Contact Messages
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-md-10">
+                    <!-- Dashboard Content -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard Overview
+                        </div>
+                        <!-- Statistics Cards -->
+                        <div class="row text-center mt-4 m-1">
+                            <div class="col-md-3" data-aos="zoom-in">
+                                <div class="card text-white bg-gradient-primary mb-3">
+                                    <div class="card-header">Total Hotels</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title text-white py-4 " id="total-hotels">25</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3" data-aos="zoom-in">
+                                <div class="card text-white bg-gradient-success mb-3">
+                                    <div class="card-header">Total Clients</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title text-white py-4 " id="total-clients">50</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3" data-aos="zoom-in">
+                                <div class="card text-white bg-gradient-warning mb-3">
+                                    <div class="card-header">Total Room Booked</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title text-white py-4 " id="total-booked-room">26</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3" data-aos="zoom-in">
+                                <div class="card text-white bg-gradient-danger mb-3">
+                                    <div class="card-header">Available Sets</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title text-white py-4 " id="total-available-rooms">265</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Section -->
+                        <div class="card mt-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                            <div class="card-header">
+                                <i class="fas fa-chart-line"></i> Website Growth Statistics
+                            </div>
+                            <div class="card-body d-flex justify-content-center align-items-center">
+                                <div class="row w-100">
+                                    <div
+                                        class="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4 mb-md-0">
+                                        <canvas id="doughnutChart" width="300" height="200"></canvas>
+                                    </div>
+                                    <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                                        <canvas id="upDownLineChart" width="300" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Users Section -->
+                    <div class="card mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                        <div class="card-header">
+                            <i class="fas fa-users"></i> Users Management
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Manage Users</h5>
+                            <p class="card-text">View and manage user accounts.</p>
+                            <a href="admin_user_management.html" class="btn btn-primary">Go to Users</a>
+                        </div>
+                    </div>
+
+                    <!-- District Section -->
+                    <div class="card mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                        <div class="card-header">
+                            <i class="fas fa-map-marker-alt"></i> District Management
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Manage Hotels District</h5>
+                            <p class="card-text">View and manage District listings.</p>
+                            <a href="admin_district.html" class="btn btn-primary">Go to District </a>
+                        </div>
+                    </div>
+
+                    <!-- Hotels Section -->
+                    <div class="card mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                        <div class="card-header">
+                            <i class="fas fa-hotel"></i> Hotels Management
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Manage Hotels</h5>
+                            <p class="card-text">View and manage hotel listings.</p>
+                            <a href="admin_hotel_add.html" class="btn btn-primary">Go to Hotels</a>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Section -->
+                    <div class="card mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                        <div class="card-header">
+                            <i class="fas fa-comments"></i> Reviews Management
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Manage Reviews</h5>
+                            <p class="card-text">View and manage user reviews.</p>
+                            <a href="admin_Review_Details.html" class="btn btn-primary">Go to Reviews</a>
+                        </div>
+                    </div>
+
+                    <!-- Bookings Section -->
+                    <div class="card mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                        <div class="card-header">
+                            <i class="fas fa-calendar-check"></i> Bookings Management
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Manage Bookings</h5>
+                            <p class="card-text">View and manage hotel bookings.</p>
+                            <a href="admin_booked_list.html" class="btn btn-primary">Go to Bookings</a>
+                        </div>
+                    </div>
+                    <!-- Contact us Section -->
+                    <div class="card mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                        <div class="card-header">
+                            <i class="fas fa-envelope"></i> Contact Management
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Manage Contact</h5>
+                            <p class="card-text">View and manage contact us.</p>
+                            <a href="admin_booked_list.html" class="btn btn-primary">Go to Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
+        <div class="container pb-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-4">
+                    <div class="bg-primary rounded p-4">
+                        <a href="index.html">
+                            <h1 class="text-white text-uppercase mb-3">Blu Sky Booking</h1>
+                        </a>
+                        <p class="text-white mb-0">
+                            Discover the luxury and comfort with Blu Sky Booking. Whether you're traveling for
+                            business or pleasure, we offer the best deals and accommodations tailored to your needs.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>1230, Dhaka District, Bangladesh </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+01401734625</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@bluskybooking.io.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/bluskybooking"
+                            target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://facebook.com/bluskybooking"
+                            target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://youtube.com/bluskybooking"
+                            target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://linkedin.com/company/bluskybooking"
+                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12">
+                    <div class="row gy-5 g-4">
+                        <div class="col-md-6">
+                            <h6 class="section-title text-start text-primary text-uppercase mb-4">Company</h6>
+                            <a class="btn btn-link" href="about.html">About Us</a>
+                            <a class="btn btn-link" href="contact.html">Contact Us</a>
+                            <a class="btn btn-link" href="#">Privacy Policy</a>
+                            <a class="btn btn-link" href="#">Terms & Conditions</a>
+                            <a class="btn btn-link" href="contact.html">Support</a>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="section-title text-start text-primary text-uppercase mb-4">Services</h6>
+                            <a class="btn btn-link" href="#">Food & Restaurant</a>
+                            <a class="btn btn-link" href="#">Spa & Fitness</a>
+                            <a class="btn btn-link" href="#">Sports & Gaming</a>
+                            <a class="btn btn-link" href="#">Event & Party</a>
+                            <a class="btn btn-link" href="#">GYM & Yoga</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Blu Sky Booking</a>, <span id="currentYear"></span>
+                        All Rights Reserved.
+                    </div>
+
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Home</a>
+                            <a href="#">Cookies</a>
+                            <a href="contact.html">Help</a>
+                            <a href="#">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- </div> -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="path/to/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.16/dist/sweetalert2.all.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/graph.js"></script>
+    <script src="js/admin_hotel_details.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>
