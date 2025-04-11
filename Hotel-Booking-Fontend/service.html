@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Service's</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/show_review.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <div class="container-xxl bg-white p-0"> -->
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-dark px-5">
+        <div class="row gx-0">
+            <div class="col-lg-2 bg-dark d-none d-lg-block">
+                <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center ps-2">
+                    <img src="./img/blu.png" alt="BSB" class="" style="width: 42%;">
+                </a>
+            </div>
+            <div class="col-lg-10">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
+                    <a href="index.html" class="navbar-brand d-block d-lg-none">
+                        <img src="./img/blu.png" alt="BSB" class="" style="width: 70px;">
+                    </a>
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="index.html" class="nav-item nav-link ">Home</a>
+                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href="service.html" class="nav-item nav-link active">Services</a>
+                            <a href="room.html" class="nav-item nav-link">Rooms</a>
+                            <a href="booking.html" class="nav-item nav-link">Booking</a>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div>
+                        <div class="d-flex flex-row align-items-center justify-content-end gap-3 pe-4"
+                            id="auth-buttons">
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+
+
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title text-center text-primary text-uppercase">Our Services</h6>
+                <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Services</span></h1>
+            </div>
+            <div class="row g-4">
+                <!-- Existing Service: Rooms & Apartments -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-hotel fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Rooms & Apartments</h5>
+                        <p class="text-body mb-0">
+                            Choose from our range of luxurious rooms and fully-furnished apartments, designed to provide
+                            ultimate comfort and style.
+                        </p>
+                    </a>
+                </div>
+                <!-- Existing Service: Food & Restaurant -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-utensils fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Food & Restaurant</h5>
+                        <p class="text-body mb-0">
+                            Savor delectable dishes from our award-winning chefs, featuring both local and international
+                            cuisine to delight your palate.
+                        </p>
+                    </a>
+                </div>
+                <!-- New Service: Luxury Suites -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-bed fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Luxury Suites</h5>
+                        <p class="text-body mb-0">
+                            Experience unparalleled luxury in our spacious suites, offering breathtaking views and
+                            premium amenities.
+                        </p>
+                    </a>
+                </div>
+                <!-- Existing Service: Spa & Fitness -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-spa fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Spa & Fitness</h5>
+                        <p class="text-body mb-0">
+                            Relax and rejuvenate with our spa services or stay fit with our state-of-the-art fitness
+                            facilities.
+                        </p>
+                    </a>
+                </div>
+                <!-- Existing Service: Sports & Gaming -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-swimmer fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Sports & Gaming</h5>
+                        <p class="text-body mb-0">
+                            Engage in various sports activities or enjoy our gaming rooms, equipped for fun and
+                            entertainment.
+                        </p>
+                    </a>
+                </div>
+                <!-- New Service: Conference & Meetings -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-briefcase fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Conference & Meetings</h5>
+                        <p class="text-body mb-0">
+                            Host your next business meeting or conference in our state-of-the-art facilities, equipped
+                            with the latest technology.
+                        </p>
+                    </a>
+                </div>
+                <!-- Existing Service: Event & Party -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-glass-cheers fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Event & Party</h5>
+                        <p class="text-body mb-0">
+                            Host your next event or celebration in our elegant venues, with professional planning and
+                            catering services.
+                        </p>
+                    </a>
+                </div>
+                <!-- New Service: Kids Club -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-child fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Kids Club</h5>
+                        <p class="text-body mb-0">
+                            Our Kids Club offers a range of activities and programs to keep your little ones entertained
+                            and engaged.
+                        </p>
+                    </a>
+                </div>
+                <!-- New Service: Transport & Tours -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-bus fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Transport & Tours</h5>
+                        <p class="text-body mb-0">
+                            Explore the local area with our transport and tour services, designed to offer convenience
+                            and adventure.
+                        </p>
+                    </a>
+                </div>
+                <!-- New Service: Concierge Services -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-concierge-bell fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Concierge Services</h5>
+                        <p class="text-body mb-0">
+                            Our concierge team is here to assist with everything from restaurant reservations to bespoke
+                            travel arrangements.
+                        </p>
+                    </a>
+                </div>
+                <!-- Existing Service: GYM & Yoga -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1.1s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-dumbbell fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">GYM & Yoga</h5>
+                        <p class="text-body mb-0">
+                            Stay active with our comprehensive gym facilities or find your zen in our yoga classes,
+                            suitable for all levels.
+                        </p>
+                    </a>
+                </div>
+                <!-- New Service: Pet-Friendly Services -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1.2s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-paw fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Pet-Friendly Services</h5>
+                        <p class="text-body mb-0">
+                            Bring your furry friends along with our pet-friendly services, including special amenities
+                            and comfortable accommodations for pets.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl testimonial mt-5 py-5  wow zoomIn" data-wow-delay="0.1s" style="margin-bottom: 90px;">
+        <div class="container">
+            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                <h5 class="section-title px-3">Reviews</h5>
+                <h1 class="mb-0">Our Clients Say!!!</h1>
+            </div>
+            <div id="reviews-container" class="owl-carousel testimonial-carousel py-5">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
+        <div class="container pb-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-4">
+                    <div class="bg-primary rounded p-4">
+                        <a href="index.html">
+                            <h1 class="text-white text-uppercase mb-3">Blu Sky Booking</h1>
+                        </a>
+                        <p class="text-white mb-0">
+                            Discover the luxury and comfort with Blu Sky Booking. Whether you're traveling for
+                            business or pleasure, we offer the best deals and accommodations tailored to your needs.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>1230, Dhaka District, Bangladesh </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+01401734625</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>support@bluskybooking.io.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/bluskybooking"
+                            target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://facebook.com/bluskybooking"
+                            target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://youtube.com/bluskybooking"
+                            target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://linkedin.com/company/bluskybooking"
+                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12">
+                    <div class="row gy-5 g-4">
+                        <div class="col-md-6">
+                            <h6 class="section-title text-start text-primary text-uppercase mb-4">Company</h6>
+                            <a class="btn btn-link" href="about.html">About Us</a>
+                            <a class="btn btn-link" href="contact.html">Contact Us</a>
+                            <a class="btn btn-link" href="#">Privacy Policy</a>
+                            <a class="btn btn-link" href="#">Terms & Conditions</a>
+                            <a class="btn btn-link" href="contact.html">Support</a>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="section-title text-start text-primary text-uppercase mb-4">Services</h6>
+                            <a class="btn btn-link" href="#">Food & Restaurant</a>
+                            <a class="btn btn-link" href="#">Spa & Fitness</a>
+                            <a class="btn btn-link" href="#">Sports & Gaming</a>
+                            <a class="btn btn-link" href="#">Event & Party</a>
+                            <a class="btn btn-link" href="#">GYM & Yoga</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Blu Sky Booking</a>, <span id="currentYear"></span> All
+                        Rights Reserved.
+                    </div>
+
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Home</a>
+                            <a href="#">Cookies</a>
+                            <a href="contact.html">Help</a>
+                            <a href="#">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- </div> -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/service.js"></script>
+</body>
+
+</html>
