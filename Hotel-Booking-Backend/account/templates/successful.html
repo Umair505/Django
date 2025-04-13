@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification Success</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f0f2f5, #c0c0c0);
+        }
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 40px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .icon {
+            font-size: 50px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333333;
+        }
+        p {
+            margin: 10px 0 30px;
+            color: #666666;
+        }
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">✔️</div>
+        <h1>Email Successfully Verified</h1>
+        <p>Your email address has been successfully verified. You can now proceed to log in.</p>
+        <a id="loginLink" class="btn">Go to Login</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginLink = document.getElementById('loginLink');
+            loginLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                window.location.href = 'https://bluskybooking.netlify.app/login.html';
+            });
+        });
+    </script>
+</body>
+</html>
