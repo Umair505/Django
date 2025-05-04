@@ -1,0 +1,140 @@
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Confirmation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .ticket {
+            width: 70%;
+            max-width: 700px;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ticket-header {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .ticket-body {
+            width: 90%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .ticket-body p {
+            margin: 5px 0;
+        }
+
+        .ticket-footer {
+            width: 100%;
+            padding: 20px;
+            background-color: #f1f1f1;
+            text-align: center;
+            border-top: 1px solid #ccc;
+        }
+
+        .ticket-footer p {
+            margin: 0;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .ticket-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .ticket-info .info-item {
+            width: 48%;
+            font-size: 14px;
+            padding: 10px;
+            border: 1px dashed #ccc;
+            border-radius: 8px;
+            background-color: #fafafa;
+            text-align: left;
+        }
+
+        .total-cost {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .qr-code {
+            margin-top: 15px;
+            text-align: center;
+            
+        }
+
+        .qr-code img {
+            width: 100px;
+            height: 100px;
+        }
+   
+        .img{
+            max-width: 200px;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        .color{
+            color: #efefef;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ticket">
+        <div class="ticket-header">
+            <div class="img">
+                <img class="img" src="./img/blu.png" alt="logo">
+            </div>
+            <h1 class="color">Booking Confirmation</h1>
+        </div>
+        <div class="ticket-body">
+            <div class="ticket-info">
+                <div class="info-item"><strong>Booking ID:</strong> {{ booking.id }}</div>
+                <div class="info-item"><strong>Hotel Name:</strong> {{ booking.hotel.name }}</div>
+                <div class="info-item"><strong>District:</strong> {{ booking.hotel.district.district_name }}</div>
+                <div class="info-item"><strong>Address:</strong> {{ booking.hotel.address }}</div>
+                <div class="info-item"><strong>User:</strong> {{ booking.user.username }}</div>
+                <div class="info-item"><strong>Email:</strong> {{ booking.user.email }}</div>
+                <div class="info-item"><strong>Check-in Date:</strong> {{ booking.start_date }}</div>
+                <div class="info-item"><strong>Check-out Date:</strong> {{ booking.end_date }}</div>
+                <div class="info-item"><strong>Number of Rooms:</strong> {{ booking.number_of_rooms }}</div>
+            </div>
+            <p class="total-cost">Total Cost: ${{total_cost }}</p>
+         
+        </div>
+        <div class="ticket-footer">
+            <p>Thank you for choosing {{ booking.hotel.name }}. We look forward to your stay!</p>
+        </div>
+    </div>
+</body>
+
+</html>

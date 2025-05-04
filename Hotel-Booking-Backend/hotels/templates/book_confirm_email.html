@@ -1,0 +1,16 @@
+
+<html>
+<body>
+    <h2>Booking Confirmation</h2>
+    <p>Dear {{ user.username }},</p>
+    <p>Thank you for booking with us. Here are your booking details:</p>
+    <ul>
+        <li>Hotel Name: {{ hotel_name }}</li>
+        <li>Start Date: {{ start_date }}</li>
+        <li>End Date: {{ end_date }}</li>
+        <li>Total Cost: ${{ total_cost }}</li>
+    </ul>
+    <p>Please click here <a href="{{ pdf_link }}">PDF Download</a> to download your booking details.</p>
+    <p>Thank you!</p>
+</body>
+</html>
