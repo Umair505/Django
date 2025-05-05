@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Success</title>
+    <!-- Add your CSS links or styles here -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        /* Example CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .link-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-success text-center">Booking Confirmation</h1>
+        <p>Dear <strong>{{ user_name }}</strong>,</p>
+        <p>We are pleased to confirm your booking at <strong>{{ hotel_name }}</strong> from <strong>{{ start_date }}</strong> to <strong>{{ end_date }}</strong>.</p>
+        <p>Total Cost: ${{ total_cost }}</p>
+        <p>A confirmation email with details has been sent to <strong>{{ user_email }}</strong>.</p>
+        <p>You can download your booking receipt <a href="{{ pdf_link }}" class="">Download Pdf</a>.</p>
+        <p>Thank you for choosing our service.</p>
+        <p> <a id="homeLink" href="https://bluskybooking.netlify.app/" class="btn btn-primary">Home</a></p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const homeLink = document.getElementById('homeLink');
+            homeLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                window.location.href = 'https://bluskybooking.netlify.app/';
+            });
+        });
+    </script>
+</body>
+
+</html>

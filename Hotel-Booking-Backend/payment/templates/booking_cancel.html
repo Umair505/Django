@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Cancelled</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .container {
+        margin-top: 50px;
+      }
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+      .btn-primary:hover {
+        background-color: #0069d9;
+        border-color: #0062cc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-6 offset-md-3 text-center">
+          <h1 class="mt-5 text-danger">Booking Cancelled!</h1>
+          <p>Your booking process has been cancelled.</p>
+          <p>You can revisit our booking page to make another reservation.</p>
+          <p>
+            <a id="homeLink" href="https://bluskybooking.netlify.app/" class="btn btn-primary">Home</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JS and other scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const homeLink = document.getElementById('homeLink')
+        homeLink.addEventListener('click', function (event) {
+          event.preventDefault()
+          window.location.href = 'https://bluskybooking.netlify.app/'
+        })
+      })
+    </script>
+  </body>
+</html>
